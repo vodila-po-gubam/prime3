@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Участникам СВО | Поддержка военнослужащих | PrimeMoney</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+header {
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+    color: #e2e8f0;
+}
+
+.logo span {
+    color: #e2e8f0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #dc2626;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.phone {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.work-time {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.ribbon-banner {
+    background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.ribbon-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: 100% 100%;
+}
+
+
+.breadcrumbs {
+    background-color: #edf2f7;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.breadcrumbs-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #48bb78;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #dc2626;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+    color: #718096;
+}
+
+.breadcrumbs .current {
+    color: #718096;
+}
+
+
+.hero-svo {
+    background: linear-gradient(rgba(47, 133, 90, 0.9), rgba(72, 187, 120, 0.9)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.hero-svo:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(220, 38, 38, 0.2)"/></svg>');
+    background-size: 100% 100%;
+}
+
+.hero-svo h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    position: relative;
+    font-weight: 700;
+}
+
+.hero-svo p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+    position: relative;
+}
+
+.btn {
+    display: inline-block;
+    background: #38a169;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.btn:hover {
+    background: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-primary {
+    background: #dc2626;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+    background: #b91c1c;
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);
+}
+
+.btn-svo {
+    background: #dc2626;
+    color: white;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-svo:hover {
+    background: #b91c1c;
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.section-title {
+    margin-bottom: 40px;
+    color: #2d3748;
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: #38a169;
+    border-radius: 2px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.center:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title.svo:after {
+    background: #dc2626;
+}
+
+.section-title.accent:after {
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+
+.support-programs {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.programs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.program-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.program-card.special {
+    border-color: #dc2626;
+    border-width: 3px;
+}
+
+.program-card.special:hover {
+    border-color: #b91c1c;
+}
+
+.program-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #dc2626;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+.program-header {
+    padding: 30px;
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.program-header.special {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.program-icon {
+    font-size: 36px;
+    margin-right: 20px;
+    color: #e2e8f0;
+    transition: color 0.3s;
+}
+
+.program-card:hover .program-icon {
+    color: #fecaca;
+}
+
+.program-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.program-content {
+    padding: 30px;
+}
+
+.program-content p {
+    margin-bottom: 20px;
+    color: #718096;
+    line-height: 1.6;
+}
+
+.program-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.program-features li {
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    color: #4a5568;
+}
+
+.program-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #38a169;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.program-card.special .program-features li:before {
+    color: #dc2626;
+}
+
+.program-card:hover .program-features li:before {
+    color: #dc2626;
+}
+
+.program-params {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.param-item {
+    text-align: center;
+}
+
+.param-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #38a169;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.param-value.special {
+    color: #dc2626;
+}
+
+.program-card:hover .param-value:not(.special) {
+    color: #2d3748;
+}
+
+.param-label {
+    font-size: 14px;
+    color: #718096;
+}
+
+
+.benefits-svo {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border-top: 4px solid #dc2626;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.benefit-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.benefit-item:hover:before {
+    opacity: 1;
+}
+
+.benefit-icon {
+    font-size: 48px;
+    color: #dc2626;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-item h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.benefit-item p {
+    color: #718096;
+    line-height: 1.6;
+}
+
+
+.documents-svo {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.documents-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.document-list {
+    background: #f7fafc;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.document-list:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #38a169 0%, #dc2626 100%);
+}
+
+.document-list h3 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+.document-list ul {
+    list-style: none;
+}
+
+.document-list ul li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #4a5568;
+}
+
+.document-list ul li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #38a169;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.document-list ul li.important:before {
+    color: #dc2626;
+}
+
+.document-download {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    color: #38a169;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.download-link:hover {
+    color: #dc2626;
+    background: #f7fafc;
+    border-color: #fecaca;
+    transform: translateX(5px);
+}
+
+.download-link i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.how-to-apply {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.steps-container:before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+    z-index: 1;
+}
+
+.step {
+    flex: 0 0 23%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.step:hover .step-number {
+    background: #38a169;
+    transform: scale(1.1);
+}
+
+.step-content h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.step-content p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.faq-svo {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+    border-color: #dc2626;
+}
+
+.faq-question {
+    padding: 20px;
+    background: #f7fafc;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background: #fee2e2;
+}
+
+.faq-question.svo {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 24px;
+    color: #dc2626;
+    transition: transform 0.3s;
+}
+
+.faq-question.active:after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-answer .highlight {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+
+.application-svo {
+     padding: 80px 0;
+    background: linear-gradient(rgba(47, 133, 90, 0.9), rgba(56, 161, 105, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.application-svo h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.application-svo p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+    position: relative;
+}
+
+.application-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+}
+
+.application-form input,
+.application-form select,
+.application-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.application-form input:focus,
+.application-form select:focus,
+.application-form textarea:focus {
+    outline: none;
+    border-color: #dafeca;
+    box-shadow: 0 0 0 2px rgba(254, 202, 202, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.application-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.application-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.application-form .submit-btn {
+    background: #38a169;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.application-form .submit-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+footer {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-logo span {
+    color: #38a169;
+}
+
+.footer-contact {
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #cbd5e0;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #38a169;
+}
+
+.footer-contact .phone-link:hover {
+    color: #fecaca;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fecaca;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: #dc2626;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #4a5568;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.copyright .highlight {
+    color: #fecaca;
+}
+
+
+@media (max-width: 992px) {
+    .hero-svo h1 {
+        font-size: 36px;
+    }
+    
+    .programs-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .application-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .step {
+        flex: 0 0 48%;
+    }
+    
+    .steps-container:before {
+        left: 10%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 1180px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #2f855a;
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0 0 15px 0;
+    }
+
+    .contact-header {
+        display: none;
+    }
+
+    .hero-svo {
+        padding: 60px 0;
+    }
+
+    .hero-svo h1 {
+        font-size: 30px;
+    }
+
+    .hero-svo p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .step {
+        flex: 0 0 100%;
+    }
+    
+    .steps-container:before {
+        display: none;
+    }
+    
+    .program-params {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-svo h1 {
+        font-size: 26px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    .program-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .program-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <div class="ribbon-banner">
+        <div class="container">
+            <i class="fas fa-flag" style="margin-right: 10px;"></i>
+            Специальные программы поддержки для участников СВО и их семей
+        </div>
+    </div>
+
+    
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-coins"></i>
+                    Prime<span>Money</span>
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                      <li><a href="yslyg.html">Услуги</a></li>
+                     <li><a href="avto.html">Деньги под авто</a></li>
+                    <li><a href="otziv.html">Отзывы</a></li>
+                    <li><a href="okompan.html">О компании</a></li>
+                    <li><a href="kontakt.html">Контакты</a></li>
+                    <li><a href="svo.html">Участникам СВО</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-header">
+                <div class="phone">+7 (3822) 500-007</div>
+                <div class="work-time">Пн-Пт: 9:00 - 20:00</div>
+            </div>
+        </div>
+    </header>
+
+  
+
+   
+    <section class="hero-svo">
+        <div class="container">
+            <h1>Финансовая поддержка участникам СВО</h1>
+            <p>Специальные кредитные программы для военнослужащих и членов их семей. Пониженные ставки, льготные условия, индивидуальный подход</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="#programs" class="btn btn-svo">Смотреть программы</a>
+                <a href="#application" class="btn btn-light">Подать заявку</a>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="programs" class="support-programs">
+        <div class="container">
+            <h2 class="section-title center svo">Программы поддержки</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #666; font-size: 18px;">Мы разработали специальные финансовые программы для участников СВО, ветеранов и членов их семей</p>
+            
+            <div class="programs-container">
+               
+                <div class="program-card special">
+                    <div class="program-badge">Специальная ставка</div>
+                    <div class="program-header special">
+                        <div class="program-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Военная ипотека</h3>
+                    </div>
+                    <div class="program-content">
+                        <p>Ипотека для участников СВО и членов их семей с государственной поддержкой. Первоначальный взнос от 0%, льготная процентная ставка.</p>
+                        
+                        <ul class="program-features special">
+                            <li>Первоначальный взнос от 0%</li>
+                            <li>Процентная ставка от 6.5% годовых</li>
+                            <li>Срок кредита до 30 лет</li>
+                            <li>Возможность использования материнского капитала</li>
+                            <li>Страхование недвижимости за наш счет</li>
+                        </ul>
+                        
+                        <div class="program-params">
+                            <div class="param-item">
+                                <div class="param-value special">до 15 млн ₽</div>
+                                <div class="param-label">Сумма кредита</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value special">от 6.5%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value special">до 30 лет</div>
+                                <div class="param-label">Срок кредита</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value special">0%</div>
+                                <div class="param-label">Первоначальный взнос</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-svo" style="width: 100%;" onclick="openApplication('Военная ипотека')">Подать заявку</button>
+                    </div>
+                </div>
+                
+         
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Автокредит для участников СВО</h3>
+                    </div>
+                    <div class="program-content">
+                        <p>Покупка нового или подержанного автомобиля по льготной программе. Специальные условия для военнослужащих.</p>
+                        
+                        <ul class="program-features">
+                            <li>Первоначальный взнос от 10%</li>
+                            <li>Процентная ставка от 7.9% годовых</li>
+                            <li>Срок кредита до 7 лет</li>
+                            <li>Любые марки и модели</li>
+                            <li>Бесплатное КАСКО на первый год</li>
+                        </ul>
+                        
+                        <div class="program-params">
+                            <div class="param-item">
+                                <div class="param-value">до 5 млн ₽</div>
+                                <div class="param-label">Сумма кредита</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 7.9%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 7 лет</div>
+                                <div class="param-label">Срок кредита</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 10%</div>
+                                <div class="param-label">Первоначальный взнос</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Автокредит для участников СВО')">Подать заявку</button>
+                    </div>
+                </div>
+                
+                
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Потребительский кредит</h3>
+                    </div>
+                    <div class="program-content">
+                        <p>Деньги на любые цели без подтверждения дохода. Упрощенная процедура оформления для участников СВО.</p>
+                        
+                        <ul class="program-features">
+                            <li>Без справок о доходах</li>
+                            <li>На любые цели</li>
+                            <li>Онлайн-оформление</li>
+                            <li>Гибкий график платежей</li>
+                            <li>Возможность отсрочки платежа</li>
+                        </ul>
+                        
+                        <div class="program-params">
+                            <div class="param-item">
+                                <div class="param-value">до 1.5 млн ₽</div>
+                                <div class="param-label">Сумма кредита</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 9.9%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 5 лет</div>
+                                <div class="param-label">Срок кредита</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">1 день</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Потребительский кредит для участников СВО')">Подать заявку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="benefits-svo">
+        <div class="container">
+            <h2 class="section-title center">Преимущества для участников СВО</h2>
+            
+            <div class="benefits-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Пониженные ставки</h3>
+                    <p>Специальные процентные ставки, ниже рыночных на 2-5% для всех кредитных продуктов</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Упрощенное оформление</h3>
+                    <p>Минимальный пакет документов. Не требуем справок о доходах и трудоустройстве</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Приоритетное рассмотрение</h3>
+                    <p>Заявки от участников СВО рассматриваются в первую очередь в течение 24 часов</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Персональный менеджер, гибкие условия, возможность реструктуризации</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="documents-svo">
+        <div class="container">
+            <h2 class="section-title center svo">Необходимые документы</h2>
+            
+            <div class="documents-container">
+                <div class="document-list">
+                    <h3>Для участников СВО</h3>
+                    <ul>
+                        <li>Паспорт гражданина РФ</li>
+                        <li>Военный билет или удостоверение личности военнослужащего</li>
+                        <li>Документ, подтверждающий участие в СВО</li>
+                        <li>СНИЛС (при наличии)</li>
+                        <li>Водительское удостоверение (для автокредита)</li>
+                    </ul>
+                    
+                    <div class="document-download">
+                        <a href="#" class="download-link">
+                            <i class="fas fa-download"></i> Скачать список документов (PDF)
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="document-list">
+                    <h3>Для членов семей</h3>
+                    <ul>
+                        <li>Паспорт гражданина РФ</li>
+                        <li>Свидетельство о браке (для супругов)</li>
+                        <li>Свидетельство о рождении (для детей)</li>
+                        <li>Документ, подтверждающий родство с участником СВО</li>
+                        <li>Документ участника СВО (копия)</li>
+                    </ul>
+                    
+                    <div class="document-download">
+                        <a href="#" class="download-link">
+                            <i class="fas fa-download"></i> Скачать список документов (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="how-to-apply">
+        <div class="container">
+            <h2 class="section-title center">Как подать заявку</h2>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Оставьте заявку</h3>
+                        <p>Заполните онлайн-форму на сайте или позвоните нам по телефону горячей линии</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Консультация специалиста</h3>
+                        <p>Наш специалист свяжется с вами для уточнения деталей и подбора программы</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Подготовка документов</h3>
+                        <p>Мы поможем собрать необходимые документы и заполнить заявление</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Получение решения</h3>
+                        <p>Рассмотрение заявки в течение 24 часов и выдача положительного решения</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-svo">
+        <div class="container">
+            <h2 class="section-title center svo">Частые вопросы</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question svo">
+                        <span>Кто может получить кредит по программе для участников СВО?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Программа доступна для: действующих участников специальной военной операции; ветеранов СВО; членов семей участников СВО (супруги, родители, дети); военнослужащих, проходящих службу по контракту или призыву. Для подтверждения статуса потребуется соответствующий документ (военный билет, удостоверение, справка из воинской части и т.д.).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question svo">
+                        <span>Какие льготы предоставляются участникам СВО?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Участникам СВО и их семьям мы предоставляем: пониженные процентные ставки (на 2-5% ниже рыночных); упрощенную процедуру оформления (минимальный пакет документов); приоритетное рассмотрение заявок (в течение 24 часов); возможность получения кредита без подтверждения дохода; индивидуальные условия погашения; бесплатную юридическую консультацию; отсрочку первого платежа до 3 месяцев по отдельным программам.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question svo">
+                        <span>Можно ли получить кредит, если участник СВО находится в зоне проведения операции?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, член семьи может оформить кредит по доверенности от участника СВО. Для этого потребуется нотариально заверенная доверенность или документы, подтверждающие родство. Мы также предусмотрели возможность дистанционного оформления через видеоконференцию с участником СВО при наличии технической возможности с его стороны. В отдельных случаях рассматриваем заявки по упрощенной процедуре.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question svo">
+                        <span>Предоставляется ли отсрочка платежа при мобилизации?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, при мобилизации участника СВО мы предоставляем кредитные каникулы на срок до 6 месяцев. В этот период выплачиваются только проценты, основной долг не гасится. После возвращения из зоны СВО предоставляется возможность реструктуризации кредита с уменьшением ежемесячного платежа или продлением срока кредитования. Для оформления отсрочки необходимо предоставить документ, подтверждающий мобилизацию.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question svo">
+                        <span>Какие программы доступны для семей погибших участников СВО?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для семей погибших героев мы предусмотрели особые условия: кредиты под 0% годовых на сумму до 500 000 рублей; полное списание долгов по действующим кредитам в нашей компании; бесплатные юридические консультации по всем вопросам; помощь в оформлении государственных выплат и льгот. Для получения поддержки необходимо предоставить свидетельство о смерти и документ, подтверждающий участие в СВО.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="application" class="application-svo">
+        <div class="container">
+            <h2>Подать заявку на кредит</h2>
+            <p>Оставьте заявку и наш специалист свяжется с вами в течение 30 минут для консультации и подбора программы</p>
+            
+            <form class="application-form" id="applicationForm">
+                <input type="hidden" name="form_type" value="svo">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                <input type="text" name="amount" placeholder="Желаемая сумма" class="full-width">
+                <textarea name="comment" placeholder="Комментарий (необязательно)" class="full-width" rows="3"></textarea>
+                <div class="form-checkbox full-width" style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                    <input type="checkbox" id="svoPrivacy" required style="margin-right: 10px; margin-top: 5px;">
+                    <label for="svoPrivacy" style="color: white; font-size: 14px;">
+                        Я согласен на обработку персональных данных и подтверждаю достоверность предоставленной информации
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-svo full-width">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-coins"></i> Prime<span>Money</span>
+                    </div>
+                    <p>Мы предоставляем надежные финансовые решения для бизнеса и частных лиц с 2012 года.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt"></i> +7 (3822) 500-007</p>
+                        <p><i class="fas fa-envelope"></i> avtodengi@inbox.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Томск, пр. Комсомольский, 14, оф.32</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#services">Кредитование бизнеса</a></li>
+                        <li><a href="#services">Инвестиции</a></li>
+                        <li><a href="#services">Рефинансирование</a></li>
+                        <li><a href="#services">Финансовые консультации</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="https://vk.com/pod_zalog_tomsk"><i class="fab fa-vk"></i></a>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Рабочее время</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 17:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 PrimeMoney. Все права защищены. <a href="#" style="color: #ffd700; text-decoration: none;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+  
+    <div id="successModal" class="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <div style="font-size: 60px; color: #dc3545; margin-bottom: 20px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Заявка отправлена!</h2>
+            <p>Спасибо за вашу заявку. Наш специалист свяжется с вами в течение 30 минут для консультации.</p>
+            <p style="font-size: 14px; color: #666; margin-top: 15px;">При звонке будьте готовы назвать кодовое слово: "СВО-2023"</p>
+            <button class="btn btn-svo" id="modalOk" style="margin-top: 20px;">Хорошо</button>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            color: #1a3a8f;
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        // Мобильное меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // Функция для открытия заявки с предвыбранной программой
+        function openApplication(programName) {
+            const select = document.querySelector('#applicationForm select:first-of-type');
+            const option = Array.from(select.options).find(opt => opt.text === programName);
+            
+            if (option) {
+                option.selected = true;
+            }
+            
+            // Прокрутка к форме
+            document.getElementById('application').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // FAQ аккордеон
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Закрыть другие открытые ответы
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Переключить текущий ответ
+                answer.classList.toggle('active');
+                
+                // Изменить иконку
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Обработка формы заявки
+        const applicationForm = document.getElementById('applicationForm');
+        const successModal = document.getElementById('successModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOk = document.getElementById('modalOk');
+        
+        applicationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch('submit.php', { method: 'POST', body: new FormData(applicationForm) })
+                .then(r => r.json())
+                .then(() => { successModal.style.display = 'flex'; applicationForm.reset(); })
+                .catch(() => { alert('Ошибка. Попробуйте позже.'); });
+        });
+        
+        // Закрытие модального окна
+        modalClose.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        modalOk.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        // Закрытие модального окна при клике вне его
+        window.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+        
+        // Маска для телефона
+        const phoneInputs = document.querySelectorAll('input[type="tel"]');
+        phoneInputs.forEach(input => {
+            input.addEventListener('input', function(e) {
+                let value = this.value.replace(/\D/g, '');
+                
+                if (value.length === 0) {
+                    this.value = '';
+                    return;
+                }
+                
+                if (value[0] === '8') {
+                    value = '7' + value.substring(1);
+                }
+                
+                if (value[0] !== '7') {
+                    value = '7' + value;
+                }
+                
+                let formattedValue = '+7';
+                
+                if (value.length > 1) {
+                    formattedValue += ' (' + value.substring(1, 4);
+                }
+                
+                if (value.length >= 4) {
+                    formattedValue += ') ' + value.substring(4, 7);
+                }
+                
+                if (value.length >= 7) {
+                    formattedValue += '-' + value.substring(7, 9);
+                }
+                
+                if (value.length >= 9) {
+                    formattedValue += '-' + value.substring(9, 11);
+                }
+                
+                this.value = formattedValue;
+            });
+        });
+        
+        // Анимация карточек при скролле
+        function animateCards() {
+            const cards = document.querySelectorAll('.program-card, .benefit-item, .document-list');
+            
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }
+        
+        // Инициализация анимации карточек
+        window.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.program-card, .benefit-item, .document-list');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s, transform 0.5s';
+            });
+            
+            window.addEventListener('scroll', animateCards);
+            animateCards(); // Проверяем сразу
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Имитация загрузки документов
+        const downloadLinks = document.querySelectorAll('.download-link');
+        downloadLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('В реальном приложении здесь бы началась загрузка документа.');
+            });
+        });
+        
+        // Открыть первый FAQ по умолчанию
+        window.addEventListener('DOMContentLoaded', function() {
+            const firstFaq = document.querySelector('.faq-question');
+            if (firstFaq) {
+                firstFaq.click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги | Кредиты и займы | PrimeMoney</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+header {
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+    color: #e2e8f0;
+}
+
+.logo span {
+    color: #e2e8f0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #dc2626;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.phone {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.work-time {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.breadcrumbs {
+    background-color: #edf2f7;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.breadcrumbs-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #48bb78;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #dc2626;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+    color: #718096;
+}
+
+.breadcrumbs .current {
+    color: #718096;
+}
+
+
+.hero-services {
+    background: linear-gradient(rgba(47, 133, 90, 0.85), rgba(72, 187, 120, 0.85)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-services h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hero-services p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    background: #38a169;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-primary {
+    background: #dc2626;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+    background: #b91c1c;
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+
+.section-title {
+    margin-bottom: 40px;
+    color: #2d3748;
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: #38a169;
+    border-radius: 2px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.center:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title.accent:after {
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+
+.services-grid {
+    padding: 60px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.services-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background: #edf2f7;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #38a169;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #e2e8f0;
+}
+
+.filter-btn.active {
+    background: #dc2626;
+    color: white;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 50%, #38a169 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.service-card:hover:before {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.service-card-header {
+    padding: 25px;
+    background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.service-icon {
+    font-size: 36px;
+    margin-right: 20px;
+    color: #e2e8f0;
+    transition: color 0.3s;
+}
+
+.service-card:hover .service-icon {
+    color: #fecaca;
+}
+
+.service-card-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.service-card-content {
+    padding: 25px;
+}
+
+.service-card-content p {
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.service-features li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    color: #4a5568;
+}
+
+.service-features li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #38a169;
+    font-weight: bold;
+}
+
+.service-features li.important:before {
+    color: #dc2626;
+}
+
+.service-params {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.param-item {
+    text-align: center;
+}
+
+.param-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #38a169;
+    margin-bottom: 5px;
+}
+
+.param-value.highlight {
+    color: #dc2626;
+}
+
+.param-label {
+    font-size: 14px;
+    color: #718096;
+}
+
+
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+}
+
+
+.advantages-services {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.advantage-item {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border-top: 4px solid #38a169;
+    border: 1px solid #e2e8f0;
+}
+
+.advantage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #dc2626;
+    border-color: #fecaca;
+}
+
+.advantage-icon {
+    font-size: 42px;
+    color: #38a169;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.advantage-item:hover .advantage-icon {
+    color: #dc2626;
+}
+
+.advantage-item h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.application-services {
+    padding: 60px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.application-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.application-info h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.application-info ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.application-info ul li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #4a5568;
+}
+
+.application-info ul li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #38a169;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.application-info ul li.important:before {
+    color: #dc2626;
+}
+
+.application-form-box {
+    background: #f7fafc;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 16px;
+    background: white;
+    color: #2d3748;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.application-form-box .submit-btn {
+    background: #dc2626;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.application-form-box .submit-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+}
+
+.faq-services {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+    border-color: #dc2626;
+}
+
+.faq-question {
+    padding: 20px;
+    background: #f7fafc;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background: #fee2e2;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 24px;
+    color: #dc2626;
+    transition: transform 0.3s;
+}
+
+.faq-question.active:after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-answer .highlight {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+
+footer {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-logo span {
+    color: #38a169;
+}
+
+.footer-contact {
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #cbd5e0;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #38a169;
+}
+
+.footer-contact .phone-link:hover {
+    color: #fecaca;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #38a169;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fecaca;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: #dc2626;
+    transform: translateY(-3px);
+}
+
+.footer-cta {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    background: rgba(56, 161, 105, 0.1);
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 1px solid rgba(56, 161, 105, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-cta:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+.footer-cta h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.footer-cta .phone-large {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fecaca;
+    margin: 15px 0;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.footer-cta .phone-large:hover {
+    color: #dc2626;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #4a5568;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.copyright .highlight {
+    color: #fecaca;
+}
+
+
+@media (max-width: 992px) {
+    .hero-services h1 {
+        font-size: 36px;
+    }
+    
+    .services-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .application-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1180px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #2f855a;
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0 0 15px 0;
+    }
+
+    .contact-header {
+        display: none;
+    }
+
+    .hero-services {
+        padding: 60px 0;
+    }
+
+    .hero-services h1 {
+        font-size: 30px;
+    }
+
+    .hero-services p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-params {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-services h1 {
+        font-size: 26px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    .service-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .service-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-coins"></i>
+                    Prime<span>Money</span>
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                      <li><a href="yslyg.html">Услуги</a></li>
+                     <li><a href="avto.html">Деньги под авто</a></li>
+                    <li><a href="otziv.html">Отзывы</a></li>
+                    <li><a href="okompan.html">О компании</a></li>
+                    <li><a href="kontakt.html">Контакты</a></li>
+                    <li><a href="svo.html">Участникам СВО</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-header">
+                <div class="phone">+7 (3822) 500-007</div>
+                <div class="work-time">Пн-Пт: 9:00 - 20:00</div>
+            </div>
+        </div>
+    </header>
+
+
+   
+    <section class="hero-services">
+        <div class="container">
+            <h1>Кредиты и финансовые услуги</h1>
+            <p>Широкий спектр финансовых решений для бизнеса и частных лиц на выгодных условиях</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="#all-services" class="btn">Смотреть все услуги</a>
+                <a href="#application" class="btn btn-light">Оформить заявку</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="all-services" class="services-grid">
+        <div class="container">
+            <h2 class="section-title center">Наши услуги</h2>
+            
+            <div class="services-filter">
+                <button class="filter-btn active" data-filter="all">Все услуги</button>
+                <button class="filter-btn" data-filter="credit">Кредиты</button>
+                <button class="filter-btn" data-filter="loan">Займы</button>
+                <button class="filter-btn" data-filter="business">Для бизнеса</button>
+                <button class="filter-btn" data-filter="auto">Автофинансирование</button>
+            </div>
+            
+            <div class="services-container">
+                
+                <div class="service-card" data-category="auto loan">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Кредит под залог авто</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Получите деньги под залог автомобиля без потери права пользования ТС. Быстрое оформление, минимальный пакет документов.</p>
+                        
+                        <ul class="service-features">
+                            <li>Авто остается у вас</li>
+                            <li>Оценка за 30 минут</li>
+                            <li>Деньги в день обращения</li>
+                            <li>Любые марки и модели</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 5 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 6%</div>
+                                <div class="param-label">Ставка в месяц</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">1-5 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">1 час</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <a href="/zaymi_pod_zalog_avto" class="btn" style="width: 100%; text-align: center; display: block;">Подробнее</a>
+                    </div>
+                </div>
+                
+                
+                <div class="service-card" data-category="business credit">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Кредит для бизнеса</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Финансирование бизнес-проектов, пополнение оборотных средств, приобретение оборудования на специальных условиях.</p>
+                        
+                        <ul class="service-features">
+                            <li>Без залога и поручителей</li>
+                            <li>Индивидуальные условия</li>
+                            <li>Отсрочка платежа</li>
+                            <li>Консультация специалиста</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 50 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 11%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 7 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">3 дня</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Кредит для бизнеса')">Оформить</button>
+                    </div>
+                </div>
+                
+               
+                <div class="service-card" data-category="credit">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Ипотечный кредит</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Приобретение жилой и коммерческой недвижимости с первоначальным взносом от 10%. Поддержка государственных программ.</p>
+                        
+                        <ul class="service-features">
+                            <li>Первоначальный взнос от 10%</li>
+                            <li>Льготные программы</li>
+                            <li>Рефинансирование ипотеки</li>
+                            <li>Страхование недвижимости</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 30 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 8.5%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 30 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">5 дней</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Ипотечный кредит')">Оформить</button>
+                    </div>
+                </div>
+                
+                
+                <div class="service-card" data-category="credit loan">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Потребительский кредит</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Деньги на любые цели без подтверждения. Быстрое решение, минимальный пакет документов, удобное погашение.</p>
+                        
+                        <ul class="service-features">
+                            <li>Без справок о доходах</li>
+                            <li>На любые цели</li>
+                            <li>Онлайн-оформление</li>
+                            <li>Гибкий график платежей</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 3 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 12%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 5 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">1 день</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Потребительский кредит')">Оформить</button>
+                    </div>
+                </div>
+                
+              
+                <div class="service-card" data-category="credit business">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Рефинансирование кредитов</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Объединение нескольких кредитов в один с уменьшением процентной ставки и ежемесячного платежа.</p>
+                        
+                        <ul class="service-features">
+                            <li>Снижение ежемесячного платежа</li>
+                            <li>Объединение до 10 кредитов</li>
+                            <li>Удобный график погашения</li>
+                            <li>Бесплатная консультация</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 10 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 10%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 7 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">3 дня</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Рефинансирование кредитов')">Оформить</button>
+                    </div>
+                </div>
+                
+                
+                <div class="service-card" data-category="credit loan">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Кредит под залог недвижимости</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Крупные суммы под залог квартиры, дома, коммерческой недвижимости. Низкие процентные ставки, длительные сроки.</p>
+                        
+                        <ul class="service-features">
+                            <li>Любая недвижимость</li>
+                            <li>Не требуется выселение</li>
+                            <li>Профессиональная оценка</li>
+                            <li>Юридическое сопровождение</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 50 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 9%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 25 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">5 дней</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Кредит под залог недвижимости')">Оформить</button>
+                    </div>
+                </div>
+                
+                
+                <div class="service-card" data-category="auto credit">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h3>Автокредит</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Покупка нового или подержанного автомобиля в кредит. Первоначальный взнос от 0%. Все марки и модели.</p>
+                        
+                        <ul class="service-features">
+                            <li>Первоначальный взнос от 0%</li>
+                            <li>Страхование КАСКО и ОСАГО</li>
+                            <li>Trade-in вашего авто</li>
+                            <li>Доставка в любой регион</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 10 млн ₽</div>
+                                <div class="param-label">Сумма</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 7.9%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">до 7 лет</div>
+                                <div class="param-label">Срок</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">1 день</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Автокредит')">Оформить</button>
+                    </div>
+                </div>
+                
+              
+                <div class="service-card" data-category="credit loan">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3>Кредитная карта</h3>
+                    </div>
+                    <div class="service-card-content">
+                        <p>Беспроцентный период до 120 дней, кешбэк до 10%. Бесплатное обслуживание, снятие наличных без комиссии.</p>
+                        
+                        <ul class="service-features">
+                            <li>Беспроцентный период 120 дней</li>
+                            <li>Кешбэк до 10%</li>
+                            <li>Бесплатное обслуживание</li>
+                            <li>Мобильный банк</li>
+                        </ul>
+                        
+                        <div class="service-params">
+                            <div class="param-item">
+                                <div class="param-value">до 1 млн ₽</div>
+                                <div class="param-label">Лимит</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">от 24%</div>
+                                <div class="param-label">Ставка в год</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">0 ₽</div>
+                                <div class="param-label">Обслуживание</div>
+                            </div>
+                            <div class="param-item">
+                                <div class="param-value">5 мин</div>
+                                <div class="param-label">Рассмотрение</div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" style="width: 100%;" onclick="openApplication('Кредитная карта')">Оформить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="cta-section">
+        <div class="container">
+            <h2>Не нашли подходящую услугу?</h2>
+            <p>Наши специалисты подберут индивидуальное финансовое решение, учитывая все ваши потребности и возможности</p>
+            <a href="#application" class="btn">Получить консультацию</a>
+        </div>
+    </section>
+
+   
+    <section id="advantages" class="advantages-services">
+        <div class="container">
+            <h2 class="section-title center">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Выгодные ставки</h3>
+                    <p>Предлагаем одни из самых низких процентных ставок на рынке благодаря прямым договорам с банками</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Быстрое решение</h3>
+                    <p>Рассмотрение заявки от 1 часа. Минимальный пакет документов. Деньги в день обращения</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Для каждого клиента разрабатываем персональные условия с учетом всех пожеланий</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Надежность и прозрачность</h3>
+                    <p>Все условия прописываем в договоре. Никаких скрытых комиссий и дополнительных платежей</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="application" class="application-services">
+        <div class="container">
+            <div class="application-container">
+                <div class="application-info">
+                    <h2>Оформите заявку онлайн</h2>
+                    <p>Оставьте заявку на получение кредита или консультацию. Наш специалист свяжется с вами в течение 15 минут для уточнения деталей и подбора оптимального решения.</p>
+                    
+                    <ul>
+                        <li>Консультация специалиста бесплатно</li>
+                        <li>Предварительное решение за 15 минут</li>
+                        <li>Без посещения офиса</li>
+                        <li>Гарантия конфиденциальности</li>
+                        <li>Помощь в сборе документов</li>
+                    </ul>
+                </div>
+                
+                <div class="application-form-box">
+                    <form id="serviceApplicationForm">
+                        <input type="hidden" name="form_type" value="service">
+                        <div class="form-group">
+                            <label for="serviceType">Выберите услугу</label>
+                            <select name="service" id="serviceType" required>
+                                <option value="" disabled selected>Выберите услугу</option>
+                                <option value="auto-loan">Кредит под залог авто</option>
+                                <option value="business">Кредит для бизнеса</option>
+                                <option value="mortgage">Ипотека</option>
+                                <option value="consumer">Потребительский кредит</option>
+                                <option value="refinance">Рефинансирование</option>
+                                <option value="real-estate">Кредит под залог недвижимости</option>
+                                <option value="auto-credit">Автокредит</option>
+                                <option value="credit-card">Кредитная карта</option>
+                                <option value="consultation">Консультация</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fullName">ФИО *</label>
+                            <input type="text" name="fullName" id="fullName" required placeholder="Иванов Иван Иванович">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phoneNumber">Телефон *</label>
+                            <input type="tel" name="phone" id="phoneNumber" required placeholder="+7 (999) 123-45-67">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="ivan@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loanAmount">Желаемая сумма (₽)</label>
+                            <input type="text" name="amount" id="loanAmount" placeholder="1 000 000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comment">Комментарий</label>
+                            <textarea name="comment" id="comment" placeholder="Расскажите о вашей ситуации или задайте вопрос..."></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox" style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+                            <input type="checkbox" id="privacyPolicy" required style="margin-right: 10px; margin-top: 5px;">
+                            <label for="privacyPolicy" style="font-size: 14px; color: #666;">
+                                Я согласен на обработку персональных данных и ознакомлен с <a href="#" style="color: #2a5bd7;">Политикой конфиденциальности</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="faq" class="faq-services">
+        <div class="container">
+            <h2 class="section-title center">Часто задаваемые вопросы</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как быстро я получу деньги после одобрения заявки?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Срок получения денег зависит от выбранной услуги. Для займов под залог авто - деньги выдаются в течение 1 часа после оформления документов. Для потребительских кредитов - в течение 1-3 рабочих дней после одобрения. Для ипотеки и бизнес-кредитов - от 3 до 10 рабочих дней, так как требуется дополнительная проверка документов и залогового имущества.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Какие документы нужны для оформления кредита?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Минимальный пакет документов включает паспорт гражданина РФ и второй документ (водительское удостоверение, СНИЛС или ИНН). Для залоговых кредитов потребуются документы на закладываемое имущество (ПТС и СТС для авто, свидетельство о собственности для недвижимости). Для бизнес-кредитов - учредительные документы компании и финансовая отчетность. Точный перечень документов наш специалист сообщит после консультации.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли получить кредит с плохой кредитной историей?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы работаем с клиентами с различной кредитной историей. Для клиентов с плохой кредитной историей мы предлагаем залоговые кредиты (под залог авто или недвижимости), где залог выступает гарантией возврата средств. Также доступны небольшие потребительские кредиты под повышенную процентную ставку. Наши специалисты помогут подобрать оптимальное решение в вашей ситуации.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Есть ли возможность досрочного погашения кредита?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, все наши кредитные продукты допускают досрочное погашение без штрафов и комиссий. Вы можете погасить кредит полностью или частично в любой удобный для вас день. При частичном досрочном погашении вы можете выбрать: сокращение срока кредита при сохранении размера ежемесячного платежа или уменьшение ежемесячного платежа при сохранении срока кредита.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Работаете ли вы с индивидуальными предпринимателями?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы активно работаем с индивидуальными предпринимателями и предлагаем специальные программы кредитования для бизнеса. Для ИП доступны кредиты на развитие бизнеса, пополнение оборотных средств, приобретение оборудования, рефинансирование существующих кредитов. Мы учитываем специфику бизнеса ИП и предлагаем гибкие условия с учетом сезонности и особенностей ведения предпринимательской деятельности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+     <footer id="contacts">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-coins"></i> Prime<span>Money</span>
+                    </div>
+                    <p>Мы предоставляем надежные финансовые решения для бизнеса и частных лиц с 2012 года.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt"></i> +7 (3822) 500-007</p>
+                        <p><i class="fas fa-envelope"></i> avtodengi@inbox.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Томск, пр. Комсомольский, 14, оф.32</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#services">Кредитование бизнеса</a></li>
+                        <li><a href="#services">Инвестиции</a></li>
+                        <li><a href="#services">Рефинансирование</a></li>
+                        <li><a href="#services">Финансовые консультации</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="https://vk.com/pod_zalog_tomsk"><i class="fab fa-vk"></i></a>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Рабочее время</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 17:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 PrimeMoney. Все права защищены. <a href="#" style="color: #ffd700; text-decoration: none;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+   
+    <div id="successModal" class="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <div style="font-size: 60px; color: #2a5bd7; margin-bottom: 20px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Заявка отправлена!</h2>
+            <p>Спасибо за вашу заявку. Наш специалист свяжется с вами в течение 15 минут.</p>
+            <button class="btn" id="modalOk">Хорошо</button>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            color: #1a3a8f;
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        // Мобильное меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // Фильтрация услуг
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убрать активный класс у всех кнопок
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Добавить активный класс текущей кнопке
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                serviceCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Функция для открытия заявки с предвыбранной услугой
+        function openApplication(serviceName) {
+            const select = document.getElementById('serviceType');
+            const option = Array.from(select.options).find(opt => opt.text === serviceName);
+            
+            if (option) {
+                option.selected = true;
+            }
+            
+            // Прокрутка к форме
+            document.getElementById('application').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Обработка формы заявки
+        const serviceApplicationForm = document.getElementById('serviceApplicationForm');
+        const successModal = document.getElementById('successModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOk = document.getElementById('modalOk');
+        
+        serviceApplicationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            fetch('submit.php', { method: 'POST', body: new FormData(serviceApplicationForm) })
+                .then(r => r.json())
+                .then(() => { successModal.style.display = 'flex'; serviceApplicationForm.reset(); })
+                .catch(() => { alert('Ошибка. Попробуйте позже.'); });
+        });
+        
+        // Закрытие модального окна
+        modalClose.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        modalOk.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        // Закрытие модального окна при клике вне его
+        window.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+        
+        // FAQ аккордеон
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Закрыть другие открытые ответы
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Переключить текущий ответ
+                answer.classList.toggle('active');
+                
+                // Изменить иконку
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Маска для телефона
+        const phoneInput = document.getElementById('phoneNumber');
+        phoneInput.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            
+            if (value.length === 0) {
+                this.value = '';
+                return;
+            }
+            
+            if (value[0] === '8') {
+                value = '7' + value.substring(1);
+            }
+            
+            if (value[0] !== '7') {
+                value = '7' + value;
+            }
+            
+            let formattedValue = '+7';
+            
+            if (value.length > 1) {
+                formattedValue += ' (' + value.substring(1, 4);
+            }
+            
+            if (value.length >= 4) {
+                formattedValue += ') ' + value.substring(4, 7);
+            }
+            
+            if (value.length >= 7) {
+                formattedValue += '-' + value.substring(7, 9);
+            }
+            
+            if (value.length >= 9) {
+                formattedValue += '-' + value.substring(9, 11);
+            }
+            
+            this.value = formattedValue;
+        });
+        
+        // Маска для суммы кредита
+        const loanAmountInput = document.getElementById('loanAmount');
+        loanAmountInput.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            
+            if (value.length === 0) {
+                this.value = '';
+                return;
+            }
+            
+            this.value = parseInt(value).toLocaleString('ru-RU');
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Инициализация при загрузке
+        window.addEventListener('DOMContentLoaded', function() {
+            // Открыть первый FAQ по умолчанию
+            const firstFaq = document.querySelector('.faq-question');
+            if (firstFaq) {
+                firstFaq.click();
+            }
+        });
+    </script>
+</body>
+</html>

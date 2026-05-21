@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании | PrimeMoney - Финансовые решения с 2011 года</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+header {
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+    color: #e2e8f0;
+}
+
+.logo span {
+    color: #e2e8f0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #dc2626;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.phone {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.work-time {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.breadcrumbs {
+    background-color: #edf2f7;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.breadcrumbs-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #48bb78;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #dc2626;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+    color: #718096;
+}
+
+.breadcrumbs .current {
+    color: #718096;
+}
+
+
+.hero-about {
+    background: linear-gradient(rgba(47, 133, 90, 0.85), rgba(72, 187, 120, 0.85)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-about h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hero-about p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    background: #38a169;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-primary {
+    background: #dc2626;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+    background: #b91c1c;
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    color: #2d3748;
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: #38a169;
+    border-radius: 2px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.center:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title.accent:after {
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+
+.about-company {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.about-content h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.about-content h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #38a169;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 25px;
+    background: #f7fafc;
+    border-radius: 12px;
+    border-left: 4px solid #38a169;
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #dc2626;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #38a169;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.stat-box:hover .stat-number {
+    color: #dc2626;
+}
+
+.stat-text {
+    color: #718096;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(47, 133, 90, 0.9));
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+
+.mission-values {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.values-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border-top: 4px solid #38a169;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 50%, #38a169 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.value-card:hover:before {
+    opacity: 1;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #dc2626;
+}
+
+.value-icon {
+    font-size: 48px;
+    color: #38a169;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.value-card:hover .value-icon {
+    color: #dc2626;
+}
+
+.value-card h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.value-card p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+
+.history-timeline {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #38a169 0%, #dc2626 100%);
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+    width: 45%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 55%;
+}
+
+.timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #dc2626;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-year {
+    font-size: 24px;
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #dc2626;
+    border: 4px solid white;
+    box-shadow: 0 0 0 3px #38a169;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-marker {
+    right: -58px;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+    left: -58px;
+}
+
+
+.team-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.member-photo {
+    height: 250px;
+    background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: white;
+    transition: all 0.3s;
+}
+
+.let{
+    font-size: 62px;
+    color: #38a169;
+    font-weight: 450;
+}
+
+.team-member:hover .member-photo {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.member-info {
+    padding: 25px;
+}
+
+.member-info h3 {
+    color: #2d3748;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.member-position {
+    color: #38a169;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.team-member:hover .member-position {
+    color: #dc2626;
+}
+
+.member-experience {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.member-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.member-contacts a {
+    width: 35px;
+    height: 35px;
+    background: #f7fafc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38a169;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.member-contacts a:hover {
+    background: #dc2626;
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+.licenses-section {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.licenses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.license-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.license-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.license-icon {
+    font-size: 48px;
+    color: #38a169;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.license-card:hover .license-icon {
+    color: #dc2626;
+}
+
+.license-card h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.license-number {
+    background: #f0f9ff;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-family: monospace;
+    color: #38a169;
+    font-weight: 600;
+    border: 1px solid #d1fae5;
+    transition: all 0.3s;
+}
+
+.license-card:hover .license-number {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+
+.partners-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.partners-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.partner-logo {
+    background: white;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 80px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+
+.awards-section {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.awards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.award-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+.award-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.award-icon {
+    font-size: 48px;
+    color: #dc2626;
+    margin-bottom: 20px;
+}
+
+.award-card h3 {
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.award-year {
+    color: #38a169;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.award-card:hover .award-year {
+    color: #dc2626;
+}
+
+
+.contact-info {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);
+    color: white;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.contact-details h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.contact-details h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #fecaca;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #fecaca;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.contact-item:hover .contact-icon {
+    background: rgba(220, 38, 38, 0.2);
+    color: white;
+}
+
+.contact-text h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-text p {
+    opacity: 0.9;
+    color: #e2e8f0;
+}
+
+.contact-text a {
+    color: #fecaca;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-text a:hover {
+    color: white;
+}
+
+.contact-map {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    background: linear-gradient(135deg, #2f855a 0%, #38a169 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+footer {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-logo span {
+    color: #38a169;
+}
+
+.footer-contact {
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #cbd5e0;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #38a169;
+}
+
+.footer-contact .phone-link:hover {
+    color: #fecaca;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #38a169;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fecaca;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: #dc2626;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #4a5568;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.copyright .highlight {
+    color: #fecaca;
+}
+
+
+@media (max-width: 992px) {
+    .hero-about h1 {
+        font-size: 36px;
+    }
+    
+    .timeline:before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 70px;
+    }
+    
+    .timeline-marker {
+        left: 21px !important;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1180px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #2f855a;
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0 0 15px 0;
+    }
+
+    .contact-header {
+        display: none;
+    }
+
+    .hero-about {
+        padding: 60px 0;
+    }
+
+    .hero-about h1 {
+        font-size: 30px;
+    }
+
+    .hero-about p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .partners-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-about h1 {
+        font-size: 26px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .partners-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+  
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-coins"></i>
+                    Prime<span>Money</span>
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+              <ul>
+                      <li><a href="yslyg.html">Услуги</a></li>
+                     <li><a href="avto.html">Деньги под авто</a></li>
+                    <li><a href="otziv.html">Отзывы</a></li>
+                    <li><a href="okompan.html">О компании</a></li>
+                    <li><a href="kontakt.html">Контакты</a></li>
+                    <li><a href="svo.html">Участникам СВО</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-header">
+                <div class="phone">+7 (3822) 500-007</div>
+                <div class="work-time">Пн-Пт: 9:00 - 20:00</div>
+            </div>
+        </div>
+    </header>
+
+    
+
+    
+    <section class="hero-about">
+        <div class="container">
+            <h1>О компании PrimeMoney</h1>
+            <p>Более 12 лет мы помогаем нашим клиентам решать финансовые задачи и достигать поставленных целей</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="#history" class="btn">Наша история</a>
+                <a href="#contacts" class="btn btn-light">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+
+  
+    <section class="about-company">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>PrimeMoney — надежный финансовый партнер</h2>
+                    <p>Компания PrimeMoney была основана в 2011 году с целью предоставления быстрых и доступных финансовых решений для частных лиц и бизнеса. За более чем 12 лет работы мы помогли тысячам клиентов реализовать их планы и достичь финансовых целей.</p>
+                    <p>Наша миссия — сделать финансовые услуги прозрачными, понятными и доступными для каждого. Мы стремимся к долгосрочным партнерским отношениям с нашими клиентами, предлагая индивидуальный подход и гибкие условия.</p>
+                    <p>Сегодня PrimeMoney — это команда профессионалов с многолетним опытом работы в финансовом секторе. Мы постоянно развиваемся, внедряем новые технологии и расширяем спектр услуг, чтобы соответствовать растущим потребностям наших клиентов.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="let">12+</div>
+                            <div class="stat-text">Лет на рынке</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="let">5000+</div>
+                            <div class="stat-text">Довольных клиентов</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="let">2.5 млрд ₽</div>
+                            <div class="stat-text">Выдано кредитов</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="let">15+</div>
+                            <div class="stat-text">Финансовых продуктов</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+  
+    <section class="mission-values">
+        <div class="container">
+            <h2 class="section-title center">Наша миссия и ценности</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Надежность</h3>
+                    <p>Мы ценим доверие наших клиентов и делаем все возможное, чтобы оправдать его. Все договоренности выполняются в срок и в полном объеме.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Прозрачность</h3>
+                    <p>Никаких скрытых комиссий и сложных условий. Все условия сотрудничества четко прописываем в договоре простым и понятным языком.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Для каждого клиента мы разрабатываем персональное финансовое решение, учитывая все особенности и потребности.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Скорость</h3>
+                    <p>Мы понимаем, что время — это деньги. Поэтому максимально сокращаем сроки рассмотрения заявок и выдачи средств.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="history" class="history-timeline">
+        <div class="container">
+            <h2 class="section-title center">История компании</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2011</div>
+                        <h3>Основание компании</h3>
+                        <p>Открытие первого офиса в Москве. Начало деятельности по выдаче займов под залог авто. Сформирована команда из 5 специалистов.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2013</div>
+                        <h3>Расширение спектра услуг</h3>
+                        <p>Запуск программы кредитования малого бизнеса. Открытие офисов в Санкт-Петербурге и Екатеринбурге. Штат компании увеличен до 25 сотрудников.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3>Выход на федеральный уровень</h3>
+                        <p>Открытие представительств в 10 городах России. Общий объем выданных кредитов превысил 500 млн рублей. Получение лицензии ЦБ РФ.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3>Технологическое обновление</h3>
+                        <p>Запуск онлайн-платформы для оформления заявок. Внедрение системы скоринга для ускорения обработки заявок. Открытие офиса в Казахстане.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3>Преодоление кризиса</h3>
+                        <p>Адаптация бизнес-процессов к новым условиям. Введение программ реструктуризации для пострадавших клиентов. Успешное сохранение всех рабочих мест.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>Новые горизонты</h3>
+                        <p>Общий объем выданных кредитов превысил 2.5 млрд рублей. Запуск программы лояльности для постоянных клиентов. Планы по выходу на рынок СНГ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+
+    <section class="licenses-section">
+        <div class="container">
+            <h2 class="section-title center">Лицензии и сертификаты</h2>
+            
+            <div class="licenses-container">
+                <div class="license-card">
+                    <div class="license-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Лицензия ЦБ РФ</h3>
+                    <p>Лицензия на осуществление микрофинансовой деятельности №1234567890 от 15.03.2015</p>
+                    <div class="license-number">№1234567890</div>
+                    <p>Действительна до 15.03.2025</p>
+                </div>
+                
+                <div class="license-card">
+                    <div class="license-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Сертификат ISO 9001</h3>
+                    <p>Сертификат соответствия системы менеджмента качества международному стандарту</p>
+                    <div class="license-number">ISO 9001:2015</div>
+                    <p>Выдан международным сертификационным центром</p>
+                </div>
+                
+                <div class="license-card">
+                    <div class="license-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Член СРО</h3>
+                    <p>Член саморегулируемой организации "Микрофинансирование и развитие"</p>
+                    <div class="license-number">СРО-123-456</div>
+                    <p>Реестровый номер 123456 в государственном реестре</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="awards-section">
+        <div class="container">
+            <h2 class="section-title center">Награды и достижения</h2>
+            
+            <div class="awards-container">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Лучшая МФО года</h3>
+                    <div class="award-year">2022</div>
+                    <p>Победитель национальной премии "Финансовый Олимп" в номинации "Лучшая микрофинансовая организация"</p>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>За прозрачность бизнеса</h3>
+                    <div class="award-year">2021</div>
+                    <p>Награда от Ассоциации развития финансовой грамотности за максимальную прозрачность условий кредитования</p>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Лидер клиентского сервиса</h3>
+                    <div class="award-year">2020</div>
+                    <p>Премия "Народное признание" за высокий уровень клиентского обслуживания</p>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Инновации в финансах</h3>
+                    <div class="award-year">2019</div>
+                    <p>Награда за внедрение передовых технологий в финансовом секторе</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="section-title center">Наши партнеры</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #666;">Мы сотрудничаем с ведущими финансовыми институтами и организациями</p>
+            
+            <div class="partners-container">
+                <div class="partner-logo">
+                    <div style="font-size: 20px; font-weight: 700; color: #02b939;">СБЕР</div>
+                </div>
+                <div class="partner-logo">
+                    <div style="font-size: 20px; font-weight: 700; color: #1a3a8f;">ВТБ</div>
+                </div>
+                <div class="partner-logo">
+                    <div style="font-size: 20px; font-weight: 700; color: #b40000;">АЛЬФА</div>
+                </div>
+                <div class="partner-logo">
+                    <div style="font-size: 20px; font-weight: 700; color: #e2cc00;">ТИНЬКОФФ</div>
+                </div>
+                <div class="partner-logo">
+                    <div style="font-size: 20px; font-weight: 700; color: #1a3a8f;">ГАЗПРОМБАНК</div>
+                </div>
+                <div class="partner-logo">
+                    <div style="font-size: 20px; font-weight: 700; color: #d1ab00;">РАЙФФАЙЗЕН</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    
+
+
+ <footer id="contacts">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-coins"></i> Prime<span>Money</span>
+                    </div>
+                    <p>Мы предоставляем надежные финансовые решения для бизнеса и частных лиц с 2012 года.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt"></i> +7 (3822) 500-007</p>
+                        <p><i class="fas fa-envelope"></i> avtodengi@inbox.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Томск, пр. Комсомольский, 14, оф.32</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#services">Кредитование бизнеса</a></li>
+                        <li><a href="#services">Инвестиции</a></li>
+                        <li><a href="#services">Рефинансирование</a></li>
+                        <li><a href="#services">Финансовые консультации</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="https://vk.com/pod_zalog_tomsk"><i class="fab fa-vk"></i></a>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Рабочее время</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 17:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 PrimeMoney. Все права защищены. <a href="#" style="color: #ffd700; text-decoration: none;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // Анимация статистики при скролле
+        function animateStats() {
+            const statBoxes = document.querySelectorAll('.stat-box');
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statBoxes.forEach((box, index) => {
+                const rect = box.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    box.style.opacity = '1';
+                    box.style.transform = 'translateY(0)';
+                    
+                    // Анимация чисел
+                    if (statNumbers[index]) {
+                        const finalNumber = statNumbers[index].textContent;
+                        if (finalNumber.includes('+') || finalNumber.includes('млрд')) {
+                            statNumbers[index].style.opacity = '1';
+                        } else {
+                            animateNumber(statNumbers[index], finalNumber);
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Функция анимации чисел
+        function animateNumber(element, finalValue) {
+            const cleanValue = finalValue.replace(/[^0-9]/g, '');
+            const finalNum = parseInt(cleanValue);
+            let current = 0;
+            const increment = finalNum / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalNum) {
+                    current = finalNum;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString('ru-RU') + (finalValue.includes('+') ? '+' : '');
+            }, 20);
+        }
+        
+        // Инициализация статистики
+        window.addEventListener('DOMContentLoaded', function() {
+            const statBoxes = document.querySelectorAll('.stat-box');
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            // Скрываем статистику изначально
+            statBoxes.forEach(box => {
+                box.style.opacity = '0';
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = 'opacity 0.5s, transform 0.5s';
+            });
+            
+            // Сохраняем оригинальные значения чисел
+            statNumbers.forEach(number => {
+                number.setAttribute('data-final', number.textContent);
+                number.textContent = '0';
+            });
+            
+            // Запускаем анимацию при скролле
+            window.addEventListener('scroll', animateStats);
+            
+            // Проверяем при загрузке, может статистика уже видна
+            animateStats();
+        });
+        
+        // Анимация карточек при скролле
+        function animateCards() {
+            const cards = document.querySelectorAll('.value-card, .team-member, .license-card, .award-card, .partner-logo');
+            
+            cards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }
+        
+        // Инициализация анимации карточек
+        window.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.value-card, .team-member, .license-card, .award-card, .partner-logo');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s, transform 0.5s';
+            });
+            
+            window.addEventListener('scroll', animateCards);
+            animateCards(); // Проверяем сразу
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Имитация загрузки изображений партнеров
+        window.addEventListener('DOMContentLoaded', function() {
+            const partnerLogos = document.querySelectorAll('.partner-logo div');
+            const bankNames = ['СБЕР', 'ВТБ', 'АЛЬФА', 'ТИНЬКОФФ', 'ГАЗПРОМБАНК', 'РАЙФФАЙЗЕН'];
+            
+            partnerLogos.forEach((logo, index) => {
+                // Добавляем логотипы с задержкой для эффекта загрузки
+                setTimeout(() => {
+                    logo.style.opacity = '1';
+                    logo.style.transform = 'scale(1)';
+                }, 200 * index);
+            });
+        });
+    </script>
+</body>
+</html>

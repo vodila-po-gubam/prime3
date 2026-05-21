@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | PrimeMoney</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+header {
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+    color: #e2e8f0;
+}
+
+.logo span {
+    color: #e2e8f0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #dc2626;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.phone {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.work-time {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.breadcrumbs {
+    background-color: #edf2f7;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.breadcrumbs-container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    color: #48bb78;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #dc2626;
+}
+
+.breadcrumbs span {
+    margin: 0 8px;
+    color: #718096;
+}
+
+.breadcrumbs .current {
+    color: #718096;
+}
+
+
+.hero-contacts {
+    background: linear-gradient(rgba(47, 133, 90, 0.85), rgba(72, 187, 120, 0.85)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-contacts h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hero-contacts p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    background: #38a169;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-primary {
+    background: #dc2626;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+    background: #b91c1c;
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4);
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    color: #2d3748;
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: #38a169;
+    border-radius: 2px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.center:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title.accent:after {
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+}
+
+
+.main-contacts {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: #f7fafc;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: #38a169;
+    font-size: 24px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.contact-item:hover .contact-icon {
+    background: #dc2626;
+    color: white;
+}
+
+.contact-details h3 {
+    color: #2d3748;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-details p {
+    color: #718096;
+    margin-bottom: 5px;
+}
+
+.contact-link {
+    color: #38a169;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+.social-contacts {
+    margin-top: 40px;
+}
+
+.social-contacts h3 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: #f7fafc;
+    border-radius: 8px;
+    color: #38a169;
+    font-size: 20px;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.social-icons a:hover {
+    background: #38a169;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(56, 161, 105, 0.3);
+}
+
+.contact-form-container {
+    background: #f7fafc;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.contact-form-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #38a169 0%, #dc2626 100%);
+}
+
+.contact-form-container h2 {
+    color: #2d3748;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 16px;
+    background: white;
+    color: #2d3748;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #38a169;
+    box-shadow: 0 0 0 2px rgba(56, 161, 105, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.form-checkbox input {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.form-checkbox label {
+    font-size: 14px;
+    color: #718096;
+}
+
+.form-checkbox a {
+    color: #38a169;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.form-checkbox a:hover {
+    color: #dc2626;
+}
+
+
+.offices-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.offices-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.office-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.office-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #fecaca;
+}
+
+.office-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.office-card:hover:before {
+    opacity: 1;
+}
+
+.office-header {
+    padding: 25px;
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.office-icon {
+    font-size: 30px;
+    margin-right: 15px;
+    color: #e2e8f0;
+    transition: color 0.3s;
+}
+
+.office-card:hover .office-icon {
+    color: #fecaca;
+}
+
+.office-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.office-content {
+    padding: 25px;
+}
+
+.office-details {
+    margin-bottom: 20px;
+}
+
+.office-detail {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.office-detail i {
+    color: #38a169;
+    margin-right: 10px;
+    margin-top: 3px;
+    font-size: 16px;
+    width: 20px;
+    transition: color 0.3s;
+}
+
+.office-card:hover .office-detail i {
+    color: #dc2626;
+}
+
+.office-map {
+    height: 200px;
+    background: #edf2f7;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718096;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.office-card:hover .office-map {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+
+.schedule-section {
+    padding: 80px 0;
+    background-color: white;
+    margin-bottom: 60px;
+}
+
+.schedule-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.schedule-info h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.schedule-info p {
+    color: #718096;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.schedule-table th {
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.schedule-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.schedule-table tr:last-child td {
+    border-bottom: none;
+}
+
+.schedule-table tr:hover {
+    background: #f7fafc;
+}
+
+.day-off {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+
+.faq-contacts {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    margin-bottom: 60px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+    border-color: #dc2626;
+}
+
+.faq-question {
+    padding: 20px;
+    background: #f7fafc;
+    font-weight: 600;
+    color: #2d3748;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background: #fee2e2;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 24px;
+    color: #dc2626;
+    transition: transform 0.3s;
+}
+
+.faq-question.active:after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-answer .highlight {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+
+.cta-contacts {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2f855a 0%, #48bb78 100%);
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cta-contacts h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cta-contacts p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.95;
+}
+
+
+footer {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-logo span {
+    color: #38a169;
+}
+
+.footer-contact {
+    margin-top: 20px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #cbd5e0;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #38a169;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fecaca;
+}
+
+.social-icons-footer {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons-footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.social-icons-footer a:hover {
+    background: #dc2626;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #4a5568;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.copyright .highlight {
+    color: #fecaca;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #38a169 0%, #dc2626 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-content h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    margin-bottom: 30px;
+    color: #718096;
+    line-height: 1.6;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #718096;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    color: #dc2626;
+    background: #f7fafc;
+}
+
+
+@media (max-width: 992px) {
+    .hero-contacts h1 {
+        font-size: 36px;
+    }
+    
+    .contacts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .offices-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1180px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #2f855a;
+        padding: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0 0 15px 0;
+    }
+
+    .contact-header {
+        display: none;
+    }
+
+    .hero-contacts {
+        padding: 60px 0;
+    }
+
+    .hero-contacts h1 {
+        font-size: 30px;
+    }
+
+    .hero-contacts p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .schedule-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .office-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-contacts h1 {
+        font-size: 26px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+    
+    .office-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .office-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-coins"></i>
+                    Prime<span>Money</span>
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+                <ul>
+                      <li><a href="yslyg.html">Услуги</a></li>
+                     <li><a href="avto.html">Деньги под авто</a></li>
+                    <li><a href="otziv.html">Отзывы</a></li>
+                    <li><a href="okompan.html">О компании</a></li>
+                    <li><a href="kontakt.html">Контакты</a></li>
+                    <li><a href="svo.html">Участникам СВО</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-header">
+                <div class="phone">+7 (3822) 500-007</div>
+                <div class="work-time">Пн-Пт: 9:00 - 20:00</div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero-contacts">
+        <div class="container">
+            <h1>Контакты PrimeMoney</h1>
+            <p>Свяжитесь с нами любым удобным способом. Мы всегда готовы помочь вам с финансовыми решениями</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="#contact-form" class="btn">Написать сообщение</a>
+                <a href="#offices" class="btn btn-light">Найти офис</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="main-contacts">
+        <div class="container">
+            <div class="contacts-container">
+                <div class="contact-info">
+                    <h2 class="section-title">Свяжитесь с нами</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Телефон</h3>
+                            <p>Единый номер для всех регионов:</p>
+                            <a href="tel:+73822500007" class="contact-link">+7 (3822) 500-007</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Электронная почта</h3>
+                            <p>Общие вопросы:</p>
+                            <a href="mailto:avtodengi@inbox.ru" class="contact-link">avtodengi@inbox.ru</a>
+
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Головной офис</h3>
+                            <p>г. Томск, пр. Комсомольский, 14, оф.32</p>
+                            <p>Бизнес-центр</p>
+                            <a href="https://www.google.com/maps/place/Акселератор/@56.4857475,84.9466071,14z/data=!4m10!1m2!2m1!1z0YLQvtC80YHQuiDQv9GALdGCLCDQmtC-0LzRgdC-0LzQvtC70YzRgdC60LjQuSwgMTQsINCR0KYgItCQ0LrRgdC10LvQtdGA0LDRgtC-0YAiLCDQvtGELjMy!3m6!1s0x43269315be92de97:0xa6317e282d67fc7d!8m2!3d56.4843931!4d84.982006!15sClrRgtC-0LzRgdC6INC_0YAt0YIsINCa0L7QvNGB0L7QvNC-0LvRjNGB0LrQuNC5LCAxNCwg0JHQpiAi0JDQutGB0LXQu9C10YDQsNGC0L7RgCIsINC-0YQuMzLgAQA!16s%2Fg%2F11_qtj32r?entry=ttu&g_ep=EgoyMDI2MDMwMS4xIKXMDSoASAFQAw%3D%3D" class="contact-link">Посмотреть на карте →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contacts">
+                        <h3>Мы в социальных сетях</h3>
+                        <div class="social-icons">
+                            <a href="https://vk.com/pod_zalog_tomsk" title="ВКонтакте">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="contact-form" class="contact-form-container">
+                    <h2>Отправить сообщение</h2>
+                    <form id="contactForm">
+                        <input type="hidden" name="form_type" value="contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" name="name" id="name" required placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" name="phone" id="phone" required placeholder="+7 (999) 123-45-67">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Электронная почта</label>
+                            <input type="email" name="email" id="email" placeholder="ivan@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Тема обращения</label>
+                            <select name="subject" id="subject">
+                                <option value="credit">Получение кредита</option>
+                                <option value="consult">Консультация</option>
+                                <option value="feedback">Обратная связь</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea name="message" id="message" required placeholder="Опишите ваш вопрос или ситуацию..."></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">Я согласен на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a></label>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    
+
+ 
+    <section class="schedule-section">
+        <div class="container">
+            <div class="schedule-container">
+                <div class="schedule-info">
+                    <h2>Режим работы</h2>
+                    <p>Мы работаем для вас в удобное время. Вы можете обратиться к нам лично в офисе, по телефону или оставить заявку онлайн в любое время суток.</p>
+                    <p>В праздничные дни график работы может меняться. Актуальную информацию о режиме работы в праздники вы можете узнать по телефону горячей линии.</p>
+                </div>
+                
+                <div class="schedule-table-container">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>День недели</th>
+                                <th>Часы работы</th>
+                                <th>Прием клиентов</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Понедельник</td>
+                                <td>9:00 - 20:00</td>
+                                <td>9:00 - 19:30</td>
+                            </tr>
+                            <tr>
+                                <td>Вторник</td>
+                                <td>9:00 - 20:00</td>
+                                <td>9:00 - 19:30</td>
+                            </tr>
+                            <tr>
+                                <td>Среда</td>
+                                <td>9:00 - 20:00</td>
+                                <td>9:00 - 19:30</td>
+                            </tr>
+                            <tr>
+                                <td>Четверг</td>
+                                <td>9:00 - 20:00</td>
+                                <td>9:00 - 19:30</td>
+                            </tr>
+                            <tr>
+                                <td>Пятница</td>
+                                <td>9:00 - 20:00</td>
+                                <td>9:00 - 19:30</td>
+                            </tr>
+                            <tr>
+                                <td>Суббота</td>
+                                <td>10:00 - 17:00</td>
+                                <td>10:00 - 16:30</td>
+                            </tr>
+                            <tr>
+                                <td class="day-off">Воскресенье</td>
+                                <td class="day-off">Выходной</td>
+                                <td class="day-off">Выходной</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="faq-contacts">
+        <div class="container">
+            <h2 class="section-title center">Часто задаваемые вопросы</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Как добраться до вашего офиса в Москве?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Наш головной офис находится по адресу: ул. Финансовая, д. 15, стр. 2. Ближайшая станция метро — "Финансовая". Выход из метро в сторону ул. Финансовой. Офис расположен в бизнес-центре "Финансовая Башня" на 7 этаже. При входе в бизнес-центр обратитесь к администратору.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Можно ли записаться на прием заранее?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, вы можете записаться на прием заранее по телефону горячей линии. Это позволит избежать ожидания в очереди. Наш специалист подберет удобное для вас время и подготовит необходимые документы к вашему визиту.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Работаете ли вы в праздничные дни?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>В официальные праздничные дни наши офисы не работают. Однако горячая линия работает в сокращенном режиме. Актуальный график работы в праздники публикуется на нашем сайте за неделю до праздников. Вы также можете оставить онлайн-заявку в любое время.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Сколько времени занимает рассмотрение онлайн-заявки?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Онлайн-заявки рассматриваются в течение 15 минут в рабочее время. Если вы оставили заявку в нерабочее время или в выходные дни, мы свяжемся с вами в первый рабочий день. Для ускорения обработки заявки рекомендуем указывать актуальный номер телефона и корректный адрес электронной почты.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="cta-contacts">
+        <div class="container">
+            <h2>Остались вопросы?</h2>
+            <p>Наши специалисты готовы помочь вам с выбором финансового продукта и ответить на все интересующие вопросы</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="tel:+79991234567" class="btn">Позвонить сейчас</a>
+                <a href="#contact-form" class="btn btn-light">Написать сообщение</a>
+            </div>
+        </div>
+    </section>
+
+    
+<footer id="contacts">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-coins"></i> Prime<span>Money</span>
+                    </div>
+                    <p>Мы предоставляем надежные финансовые решения для бизнеса и частных лиц с 2012 года.</p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone-alt"></i> +7 (3822) 500-007</p>
+                        <p><i class="fas fa-envelope"></i> avtodengi@inbox.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Томск, пр. Комсомольский, 14, оф.32</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#services">Кредитование бизнеса</a></li>
+                        <li><a href="#services">Инвестиции</a></li>
+                        <li><a href="#services">Рефинансирование</a></li>
+                        <li><a href="#services">Финансовые консультации</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="https://vk.com/pod_zalog_tomsk"><i class="fab fa-vk"></i></a>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Рабочее время</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 17:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 PrimeMoney. Все права защищены. <a href="#" style="color: #ffd700; text-decoration: none;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="successModal" class="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <div style="font-size: 60px; color: #2a5bd7; margin-bottom: 20px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Сообщение отправлено!</h2>
+            <p>Спасибо за ваше обращение. Наш специалист свяжется с вами в течение 15 минут.</p>
+            <button class="btn" id="modalOk">Хорошо</button>
+        </div>
+    </div>
+
+    <script>
+        // Мобильное меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // FAQ аккордеон
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Закрыть другие открытые ответы
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Переключить текущий ответ
+                answer.classList.toggle('active');
+                
+                // Изменить иконку
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Обработка формы контактов
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalOk = document.getElementById('modalOk');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            fetch('submit.php', { method: 'POST', body: new FormData(form) })
+                .then(r => r.json())
+                .then(() => { successModal.style.display = 'flex'; form.reset(); })
+                .catch(() => { alert('Ошибка. Попробуйте позже.'); });
+        });
+        
+        // Закрытие модального окна
+        modalClose.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        modalOk.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+        
+        // Закрытие модального окна при клике вне его
+        window.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Маска для телефона
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = this.value.replace(/\D/g, '');
+            
+            if (value.length === 0) {
+                this.value = '';
+                return;
+            }
+            
+            if (value[0] === '8') {
+                value = '7' + value.substring(1);
+            }
+            
+            if (value[0] !== '7') {
+                value = '7' + value;
+            }
+            
+            let formattedValue = '+7';
+            
+            if (value.length > 1) {
+                formattedValue += ' (' + value.substring(1, 4);
+            }
+            
+            if (value.length >= 4) {
+                formattedValue += ') ' + value.substring(4, 7);
+            }
+            
+            if (value.length >= 7) {
+                formattedValue += '-' + value.substring(7, 9);
+            }
+            
+            if (value.length >= 9) {
+                formattedValue += '-' + value.substring(9, 11);
+            }
+            
+            this.value = formattedValue;
+        });
+        
+        // Инициализация при загрузке
+        window.addEventListener('DOMContentLoaded', function() {
+            // Открыть первый FAQ по умолчанию
+            const firstFaq = document.querySelector('.faq-question');
+            if (firstFaq) {
+                firstFaq.click();
+            }
+        });
+    </script>
+</body>
+</html>
